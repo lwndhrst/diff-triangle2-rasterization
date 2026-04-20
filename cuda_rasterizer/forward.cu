@@ -377,10 +377,10 @@
 				intersect_x = -1*(offset * previous_normal.y - previous_offsets[i-1] * normal.y) / det;
 				intersect_y = -1*(previous_offsets[i-1] * normal.x - offset * previous_normal.x) / det;
 
-				uint bx0 = min(grid.x, max(0, (uint)(intersect_x / BLOCK_X)));
-				uint by0 = min(grid.y, max(0, (uint)(intersect_y / BLOCK_Y)));
-				uint bx1 = min(grid.x, max(0, (uint)((intersect_x + BLOCK_X - 1) / BLOCK_X)));
-				uint by1 = min(grid.y, max(0, (uint)((intersect_y + BLOCK_Y - 1) / BLOCK_Y)));
+				uint32_t bx0 = min(grid.x, max(0, (uint32_t)(intersect_x / BLOCK_X)));
+				uint32_t by0 = min(grid.y, max(0, (uint32_t)(intersect_y / BLOCK_Y)));
+				uint32_t bx1 = min(grid.x, max(0, (uint32_t)((intersect_x + BLOCK_X - 1) / BLOCK_X)));
+				uint32_t by1 = min(grid.y, max(0, (uint32_t)((intersect_y + BLOCK_Y - 1) / BLOCK_Y)));
 
 				rect_min_triangle_test.x = min(rect_min_triangle_test.x, bx0);
 				rect_min_triangle_test.y = min(rect_min_triangle_test.y, by0);
@@ -392,7 +392,7 @@
 	 }
  
 	   
-	 if (distance_points > 1600 or distance_points < 1 or dist > -1) {
+	 if (distance_points > 1600 || distance_points < 1 || dist > -1) {
 		 radii[idx] = 0;
 		 tiles_touched[idx] = 0;
 		 scaling[idx] = 0.0f;
@@ -414,10 +414,10 @@
 		// Calculate intersection point
 		intersect_x = -1*(offset_ * previous_normal.y - previous_offset * normal.y) / det;
 		intersect_y = -1*(previous_offset * normal.x - offset_ * previous_normal.x) / det;
-		uint bx0 = min(grid.x, max(0, (uint)(intersect_x / BLOCK_X)));
-		uint by0 = min(grid.y, max(0, (uint)(intersect_y / BLOCK_Y)));
-		uint bx1 = min(grid.x, max(0, (uint)((intersect_x + BLOCK_X - 1) / BLOCK_X)));
-		uint by1 = min(grid.y, max(0, (uint)((intersect_y + BLOCK_Y - 1) / BLOCK_Y)));
+		uint32_t bx0 = min(grid.x, max(0, (uint32_t)(intersect_x / BLOCK_X)));
+		uint32_t by0 = min(grid.y, max(0, (uint32_t)(intersect_y / BLOCK_Y)));
+		uint32_t bx1 = min(grid.x, max(0, (uint32_t)((intersect_x + BLOCK_X - 1) / BLOCK_X)));
+		uint32_t by1 = min(grid.y, max(0, (uint32_t)((intersect_y + BLOCK_Y - 1) / BLOCK_Y)));
 
 		rect_min_triangle_test.x = min(rect_min_triangle_test.x, bx0);
 		rect_min_triangle_test.y = min(rect_min_triangle_test.y, by0);
